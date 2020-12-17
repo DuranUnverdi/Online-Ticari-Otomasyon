@@ -1,0 +1,24 @@
+﻿@model MVCTicariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Personel Sayfası</h2>
+<br />
+@using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+
+    <form class="form-group" method="post">
+        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control", @placeholder = "Personel Adı" }) <br />
+        @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control", @placeholder = "Personel Soyadı" }) <br />
+        @* @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control", @placeholder = "Personel Görseli" }) <br />*@
+        <input type="file" name="PersonelGorsel" />
+        <br /><br />
+        @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control", @placeholder = "Departman" })
+        <br /> <button class="btn btn-info">Kaydet</button>
+    </form>
+
+}

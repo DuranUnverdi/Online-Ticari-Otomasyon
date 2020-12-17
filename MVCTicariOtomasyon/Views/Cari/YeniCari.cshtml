@@ -1,0 +1,22 @@
+﻿@model MVCTicariOtomasyon.Models.Siniflar.Cariler
+@{
+    ViewBag.Title = "YeniCari";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Cari Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control",@placeholder="Adınızı Giriniz" })
+    <br />
+    @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control", @placeholder = "Soyadınızı Giriniz..." })
+    <br />
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control", @placeholder = "Şehrinizi Giriniz..." })
+    <br />
+    @Html.TextBoxFor(x => x.CariMaiil, new { @class = "form-control", @placeholder = "Mail Adresinizi Giriniz..." })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
+

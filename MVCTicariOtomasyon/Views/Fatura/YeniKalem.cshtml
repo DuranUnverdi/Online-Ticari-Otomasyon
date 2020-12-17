@@ -1,0 +1,20 @@
+﻿@model MVCTicariOtomasyon.Models.Siniflar.FaturaKalem
+@{
+    ViewBag.Title = "YeniKalem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Kalem Girişi</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.TextBoxFor(x=>x.Aciklama, new { @class = "form-control", @placeholder = "Aciklama" }) <br />
+    @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control", @placeholder = "Miktar" }) <br />
+    @Html.TextBoxFor(x => x.BirimFiyat, new { @class = "form-control", @placeholder = "BirimFiyat" }) <br />
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control", @placeholder = "Tutar" }) <br />
+    @Html.TextBoxFor(x => x.Faturaid, new { @class = "form-control", @placeholder = "Faturaid" }) <br />
+   
+    <br /> <button class="btn btn-info">Kaydet</button>
+</form>
+
+

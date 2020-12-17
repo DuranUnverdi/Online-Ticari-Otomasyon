@@ -1,0 +1,21 @@
+﻿@model MVCTicariOtomasyon.Models.Siniflar.Faturalar
+
+@{
+    ViewBag.Title = "FaturaEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Fatura Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control", @placeholder = "FaturaSeriNo" }) <br />
+    @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control", @placeholder = "FaturaSıraNo" }) <br />
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control", @placeholder = "VergiDairesi" }) <br />
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", @placeholder = "Tarih" }) <br />
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control", @placeholder = "Saat" }) <br />
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control", @placeholder = "TeslimEden" }) <br />
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control", @placeholder = "TeslimAlan" }) <br />
+
+    <br /> <button class="btn btn-info">Kaydet</button>
+</form>

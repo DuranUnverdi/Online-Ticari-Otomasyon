@@ -1,0 +1,34 @@
+﻿@model MVCTicariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Cari Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.PersonelID)
+    @Html.LabelFor(x => x.PersonelAd)
+    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PersonelAd, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.PersonelSoyad)
+    @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PersonelSoyad, "", new { @style = "color:orange" })
+    <br />
+    @Html.LabelFor(x => x.PersonelGorsel)
+  <input type="file" name="PersonelGorsel"/>
+    @Html.ValidationMessageFor(x => x.PersonelGorsel, "", new { @style = "color:green" })
+    <br />
+    @Html.LabelFor(x => x.Departman)
+    @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+   <br />
+    <button class="btn btn-default" style="background-color:yellowgreen">Güncelle</button>
+</div>
+}
+
+
+

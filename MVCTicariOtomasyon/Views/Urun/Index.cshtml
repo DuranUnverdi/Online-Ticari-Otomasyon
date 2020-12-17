@@ -1,0 +1,49 @@
+﻿@using MVCTicariOtomasyon.Models.Siniflar;
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+@using(Html.BeginForm("Index","Urun",FormMethod.Get))
+{
+<p>
+    <b>Ürün Adı</b>: @Html.TextBox("p")
+    <input type="submit" value="ara" />
+</p>
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        
+        <th>ÜRÜN</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>ALIŞ FİYAT</th>
+        <th>SATIŞ FİYAT</th>
+        <th>KATEGORİ</th>
+ 
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Satış Yap</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+<tr>
+
+    <td>@u.UrunAd</td>
+    <td>@u.Marka</td>
+    <td>@u.Stok</td>
+    <td>@u.AlisFiyat ₺</td>
+    <td>@u.SatisFiyat ₺</td>
+    <td>@u.Kategori.KategoriAd</td>
+
+    <td><a href="/Urun/UrunSil/@u.UrunID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Urun/UrunGetir/@u.UrunID" class="btn btn-success">Güncelle</a></td>
+    <td><a href="/Urun/SatisYap/@u.UrunID" class="btn btn-default" style="background-color:darkblue;color:white;">Satış Yap</a></td>
+
+</tr>
+    }
+</table>
+<br /> 
+<a href="/Urun/YeniUrun/" class="btn btn-info">Yeni Ürün</a>
