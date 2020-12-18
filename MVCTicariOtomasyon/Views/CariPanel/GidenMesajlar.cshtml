@@ -1,12 +1,12 @@
-﻿@using MVCTicariOtomasyon.Models.Siniflar
+﻿
+@using MVCTicariOtomasyon.Models.Siniflar
 @model List<Mesajlar>
+
 @{
-
-    ViewBag.Title = "GelenMesajlar";
-
+    ViewBag.Title = "GidenMesajlar";
     Layout = "~/Views/Shared/_CariLayout.cshtml";
-
 }
+
 
 
 
@@ -358,7 +358,7 @@
 
                                             <td class="mailbox-star"><a href="#"></a></td>
 
-                                            <td class="mailbox-name"><a href="read-mail.html">@x.Gonderici</a></td>
+                                            <td class="mailbox-name"><a href="read-mail.html">@x.Alici</a></td>
 
                                             <td class="mailbox-subject">
 
@@ -377,7 +377,7 @@
 
                             </table>
 
-                      
+
                         </div>
 
                     </div>
@@ -458,77 +458,77 @@
     <!-- Page Script -->
 
     <script>
-$(function () {
+        $(function () {
 
-    //Enable check and uncheck all functionality
+            //Enable check and uncheck all functionality
 
-    $('.checkbox-toggle').click(function () {
+            $('.checkbox-toggle').click(function () {
 
-      var clicks = $(this).data('clicks')
+                var clicks = $(this).data('clicks')
 
-      if (clicks) {
+                if (clicks) {
 
-        //Uncheck all checkboxes
+                    //Uncheck all checkboxes
 
-        $('.mailbox-messages input[type=\'checkbox\']').prop('checked', false)
+                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', false)
 
-        $('.checkbox-toggle .far.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
+                    $('.checkbox-toggle .far.fa-check-square').removeClass('fa-check-square').addClass('fa-square')
 
-      } else {
+                } else {
 
-        //Check all checkboxes
+                    //Check all checkboxes
 
-        $('.mailbox-messages input[type=\'checkbox\']').prop('checked', true)
+                    $('.mailbox-messages input[type=\'checkbox\']').prop('checked', true)
 
-        $('.checkbox-toggle .far.fa-square').removeClass('fa-square').addClass('fa-check-square')
+                    $('.checkbox-toggle .far.fa-square').removeClass('fa-square').addClass('fa-check-square')
 
-      }
+                }
 
-      $(this).data('clicks', !clicks)
+                $(this).data('clicks', !clicks)
 
-    })
-
-
-
-    //Handle starring for glyphicon and font awesome
-
-    $('.mailbox-star').click(function (e) {
-
-      e.preventDefault()
-
-      //detect type
-
-      var $this = $(this).find('a > i')
-
-      var glyph = $this.hasClass('glyphicon')
-
-      var fa    = $this.hasClass('fa')
+            })
 
 
 
-      //Switch states
+            //Handle starring for glyphicon and font awesome
 
-      if (glyph) {
+            $('.mailbox-star').click(function (e) {
 
-        $this.toggleClass('glyphicon-star')
+                e.preventDefault()
 
-        $this.toggleClass('glyphicon-star-empty')
+                //detect type
 
-      }
+                var $this = $(this).find('a > i')
+
+                var glyph = $this.hasClass('glyphicon')
+
+                var fa = $this.hasClass('fa')
 
 
 
-      if (fa) {
+                //Switch states
 
-        $this.toggleClass('fa-star')
+                if (glyph) {
 
-        $this.toggleClass('fa-star-o')
+                    $this.toggleClass('glyphicon-star')
 
-      }
+                    $this.toggleClass('glyphicon-star-empty')
 
-    })
+                }
 
-  })</script>
+
+
+                if (fa) {
+
+                    $this.toggleClass('fa-star')
+
+                    $this.toggleClass('fa-star-o')
+
+                }
+
+            })
+
+        })</script>
 
     <!-- AdminLTE for demo purposes -->
 
@@ -537,6 +537,8 @@ $(function () {
 </body>
 
 </html>
+
+
 
 
 
