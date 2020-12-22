@@ -1,7 +1,7 @@
-﻿
-@{
-    ViewBag.Title = "MesajDetay";
-    Layout = "~/Views/Shared/_CariLayout.cshtml";
+﻿@using MVCTicariOtomasyon.Models.Siniflar
+@model List<Mesajlar>
+@{ViewBag.Title = "MesajDetay";
+Layout = "~/Views/Shared/_CariLayout.cshtml";
 }
 <!DOCTYPE html>
 
@@ -66,9 +66,9 @@
 
         <div class="container-fluid">
 
-            <div<div class="col-md-3">
+            <div class="col-md-3">
 
-                <a href="compose.html" class="btn btn-primary btn-block mb-3">Yeni Mesaj Oluştur</a>
+                <a href="/GelenMesajlar/YeniMesaj/" class="btn btn-primary btn-block mb-3">Yeni Mesaj Oluştur</a>
 
                 <div class="card">
 
@@ -222,11 +222,12 @@
 
                 <!-- /.card -->
 
-            </div> class="row">
+            </div>
 
 
-                <!-- /.col -->
-
+            <!-- /.col -->
+            @foreach (var x in Model)
+            {
                 <div class="col-md-9">
 
                     <div class="card card-primary card-outline">
@@ -251,13 +252,14 @@
 
                             <div class="mailbox-read-info">
 
-                                <h5>Konu:</h5>
+                                <h5>Konu:@x.Konu</h5>
 
                                 <h6>
 
-                                    Gönderen:
+                                    Gönderen:@x.Gonderici
 
-                                    <span class="mailbox-read-time float-right">Tarih</span>
+                                    <span class="mailbox-read-time float-right">@x.Tarih</span>
+
 
                                 </h6>
 
@@ -303,18 +305,12 @@
 
                             <div class="mailbox-read-message">
 
-                                <p>Hello John,</p>
+                                <p>Merhaba,</p>
 
                                 <p>
 
-                                    Keffiyeh blog actually fashion axe vegan, irony biodiesel. Cold-pressed hoodie chillwave put a bird
-
-                                    on it aesthetic, bitters brunch meggings vegan iPhone. Dreamcatcher vegan scenester mlkshk. Ethical
-
-                                  
+                                   @x.İcerik
                                 </p>
-
-                                <p>Thanks,<br>Jane</p>
 
                             </div>
 
@@ -348,13 +344,13 @@
                     <!-- /.card -->
 
                 </div>
+            }
 
-                <!-- /.col -->
+            <!-- /.col -->
 
-            </div>
+        </div>
 
-            <!-- /.row -->
-
+        <!-- /.row -->
         </div>
 
     </section>
